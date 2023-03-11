@@ -1,0 +1,30 @@
+.header {
+  background-color: azure;
+}
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.header__title {
+}
+.main {
+  background-color: azure;
+}
+.main__container {
+}
+.accordion {
+}
+.accordion__section {
+}
+.section {
+}
+.section__title {
+}
+.title {
+}
+.section__button {
+}
+.section__decsription {
+}
+.section__image {
+}

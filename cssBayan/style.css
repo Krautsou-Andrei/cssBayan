@@ -1,30 +1,136 @@
-.header {
-  background-color: azure;
+:root {
+  --section-height-mobile: 18.75rem;
 }
+
 .container {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
 .header__title {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+
+  font-size: 1.2rem;
+  line-height: 110%;
 }
-.main {
-  background-color: azure;
-}
-.main__container {
-}
-.accordion {
-}
+
 .accordion__section {
+  /* padding-bottom: 0.625rem; */
 }
+
+.section-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.section-label {
+  cursor: inherit;
+}
+
+.section-checkbox:checked + .section-label .section__decsription {
+  padding-bottom: 0.625rem;
+
+  max-height: var(--section-height-mobile);
+
+  scale: 1;
+  transition: all 1s;
+}
+
+.section-checkbox:checked + .section-label .section__button {
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+.section-checkbox:checked + .section-label .title-section {
+  color: black;
+}
+
 .section {
+  border-top: 0.0625rem solid gray;
+  color: blue;
+  transition: color 0.3s;
+  cursor: pointer;
 }
+
 .section__title {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+
+  display: flex;
+  column-gap: 0.625rem;
+  align-items: center;
+  justify-content: space-between;
 }
-.title {
+
+.title-section {
+  font-size: 1.2rem;
+  line-height: 110%;
 }
+
 .section__button {
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
+  background-image: url("./assets/close.svg");
+  transform: rotate(45deg);
+  transition: transform 0.3s;
 }
+
 .section__decsription {
+  scale: 0;
+  max-height: 0;
+
+  display: flex;
+  justify-content: center;
+  transition: all 1s;
 }
-.section__image {
+
+.image {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/3;
+  overflow: hidden;
 }
+
+.image__media {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (hover: hover) {
+  .accordion:hover .section {
+    color: black;
+    transition: color 0.3s;
+  }
+
+  .accordion:hover .section__button {
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem;
+    background-image: url("./assets/close.svg");
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  .accordion__section:hover .section__decsription {
+    height: 18.75rem;
+    scale: 1;
+    transition: all 1s;
+  }
+
+  .accordion__section:hover .section__button {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+}
+
+@media (min-width: 820px) {
+} ;

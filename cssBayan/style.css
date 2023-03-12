@@ -66,7 +66,7 @@
 }
 
 .title-section {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 110%;
 }
 
@@ -133,4 +133,31 @@
 }
 
 @media (min-width: 820px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .header__title {
+    font-size: 1.5rem;
+  }
+
+  .section-checkbox:checked + .section-label .section__decsription {
+    padding-bottom: 1rem;
+  }
+
+  .section__title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .title-section {
+    font-size: 1.2rem;
+  }
+
+  .section__button {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 1.2rem;
+  }
 } ;

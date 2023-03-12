@@ -1,0 +1,242 @@
+:root {
+  --section-height-mobile: 12.5rem;
+  --section-height-tablet: 31.25rem;
+}
+
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.header__title {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+
+  font-size: 1.2rem;
+  line-height: 110%;
+}
+
+.section-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.section-label {
+  cursor: inherit;
+}
+
+.section-checkbox:checked + .section-label .section__text {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+
+  min-height: var(--section-height-mobile);
+
+  scale: 1;
+  transition: all 1s;
+}
+
+.section-checkbox:checked + .section-label .section__button {
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+.section-checkbox:checked + .section-label .title-section {
+  color: black;
+}
+
+.section {
+  border-top: 0.0625rem solid gray;
+  color: blue;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.section__title {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+
+  display: flex;
+  column-gap: 0.625rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-section {
+  font-size: 1rem;
+  line-height: 110%;
+}
+
+.section__button {
+  width: 1rem;
+  height: 1rem;
+
+  background-size: 1rem;
+  background-image: url("./assets/close.svg");
+
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.section__text {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+
+  max-width: 51.875rem;
+  min-height: 0;
+  height: 0;
+
+  font-size: 1rem;
+  line-height: 110%;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+
+  scale: 0;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url("./assets/image.jpg");
+  transition: all 1s;
+}
+
+@media (hover: hover) {
+  .accordion:hover .section {
+    color: black;
+    transition: color 0.3s;
+  }
+
+  .section-checkbox:hover + .section-label .section__text {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+
+    min-height: var(--section-height-mobile);
+
+    background-size: 100% 100%;
+
+    scale: 1;
+    transition: all 1s;
+  }
+
+  .accordion:hover .section__button {
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem;
+    background-image: url("./assets/close.svg");
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  .accordion__section:hover .section__button {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+}
+
+@media (min-width: 820px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .section-checkbox:checked + .section-label .section__text {
+    min-height: var(--section-height-tablet);
+  }
+
+  .section__title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .title-section {
+    font-size: 1.5rem;
+  }
+
+  .section__button {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem;
+  }
+
+  .section__text {
+    font-size: 2rem;
+  }
+
+  @media (hover: hover) {
+    .section-checkbox:hover + .section-label .section__text {
+      margin-bottom: 1rem;
+
+      min-height: var(--section-height-tablet);
+
+      background-size: 100% 100%;
+
+      scale: 1;
+      transition: all 1s;
+    }
+
+    .section__button {
+      width: 0;
+      height: 0;
+      background-size: 0;
+    }
+
+    .accordion:hover .section__button {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-size: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 1980px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .header__title {
+    padding-bottom: 1.5rem;
+
+    font-size: 2.5rem;
+  }
+
+  .section__title {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .title-section {
+    font-size: 2rem;
+  }
+
+  .section__button {
+    width: 2rem;
+    height: 2rem;
+    background-size: 2rem;
+  }
+
+  .section__text {
+    font-size: 3rem;
+  }
+
+  @media (hover: hover) {
+    .section__button {
+      width: 0;
+      height: 0;
+      background-size: 0;
+    }
+
+    .accordion:hover .section__button {
+      width: 2rem;
+      height: 2rem;
+      background-size: 2rem;
+    }
+  }
+} ;

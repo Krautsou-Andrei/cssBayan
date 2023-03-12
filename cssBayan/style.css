@@ -1,5 +1,6 @@
 :root {
-  --section-height-mobile: 31.25rem;
+  --section-height-mobile: 12.5rem;
+  --section-height-tablet: 31.25rem;
 }
 
 .container {
@@ -26,10 +27,11 @@
   cursor: inherit;
 }
 
-.section-checkbox:checked + .section-label .section__decsription {
-  padding-bottom: 0.625rem;
+.section-checkbox:checked + .section-label .section__text {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
 
-  max-height: var(--section-height-mobile);
+  min-height: var(--section-height-mobile);
 
   scale: 1;
   transition: all 1s;
@@ -69,42 +71,54 @@
 .section__button {
   width: 1rem;
   height: 1rem;
+
   background-size: 1rem;
   background-image: url("./assets/close.svg");
+
   transform: rotate(45deg);
   transition: transform 0.3s;
 }
 
-.section__decsription {
+.section__text {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+
+  max-width: 830px;
+  min-height: 0;
+  height: 0;
+
+  font-size: 1rem;
+  line-height: 110%;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+
   scale: 0;
-  max-height: 0;
 
-  display: flex;
-  justify-content: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url("./assets/image.jpg");
   transition: all 1s;
-}
-
-.image {
-  position: relative;
-
-  width: 100%;
-  height: auto;
-  aspect-ratio: 5/3;
-  overflow: hidden;
-}
-
-.image__media {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media (hover: hover) {
   .accordion:hover .section {
     color: black;
     transition: color 0.3s;
+  }
+
+  .section-checkbox:hover + .section-label .section__text {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+
+    min-height: var(--section-height-mobile);
+
+    background-size: 100% 100%;
+
+    scale: 1;
+    transition: all 1s;
   }
 
   .accordion:hover .section__button {
@@ -114,12 +128,6 @@
     background-image: url("./assets/close.svg");
     transform: rotate(45deg);
     transition: transform 0.3s;
-  }
-
-  .accordion__section:hover .section__decsription {
-    max-height: var(--section-height-mobile);
-    scale: 1;
-    transition: all 1s;
   }
 
   .accordion__section:hover .section__button {
@@ -138,8 +146,8 @@
     font-size: 2rem;
   }
 
-  .section-checkbox:checked + .section-label .section__decsription {
-    padding-bottom: 1rem;
+  .section-checkbox:checked + .section-label .section__text {
+    min-height: var(--section-height-tablet);
   }
 
   .section__title {
@@ -157,9 +165,20 @@
     background-size: 1.5rem;
   }
 
+  .section__text {
+    font-size: 2rem;
+  }
+
   @media (hover: hover) {
-    .accordion__section:hover .section__decsription {
-      padding-bottom: 1rem;
+    .section-checkbox:hover + .section-label .section__text {
+      margin-bottom: 1rem;
+
+      min-height: var(--section-height-tablet);
+
+      background-size: 100% 100%;
+
+      scale: 1;
+      transition: all 1s;
     }
 
     .section__button {
@@ -188,10 +207,6 @@
     font-size: 2.5rem;
   }
 
-  .section-checkbox:checked + .section-label .section__decsription {
-    padding-bottom: 1.2rem;
-  }
-
   .section__title {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
@@ -207,11 +222,11 @@
     background-size: 2rem;
   }
 
-  @media (hover: hover) {
-    .accordion__section:hover .section__decsription {
-      padding-bottom: 1.2rem;
-    }
+  .section__text {
+    font-size: 3rem;
+  }
 
+  @media (hover: hover) {
     .section__button {
       width: 0;
       height: 0;

@@ -1,5 +1,5 @@
 :root {
-  --section-height-mobile: 18.75rem;
+  --section-height-mobile: 31.25rem;
 }
 
 .container {
@@ -14,10 +14,6 @@
 
   font-size: 1.2rem;
   line-height: 110%;
-}
-
-.accordion__section {
-  /* padding-bottom: 0.625rem; */
 }
 
 .section-checkbox {
@@ -121,7 +117,7 @@
   }
 
   .accordion__section:hover .section__decsription {
-    height: 18.75rem;
+    max-height: var(--section-height-mobile);
     scale: 1;
     transition: all 1s;
   }
@@ -139,7 +135,7 @@
   }
 
   .header__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .section-checkbox:checked + .section-label .section__decsription {
@@ -152,12 +148,80 @@
   }
 
   .title-section {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .section__button {
-    width: 1.2rem;
-    height: 1.2rem;
-    background-size: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem;
+  }
+
+  @media (hover: hover) {
+    .accordion__section:hover .section__decsription {
+      padding-bottom: 1rem;
+    }
+
+    .section__button {
+      width: 0;
+      height: 0;
+      background-size: 0;
+    }
+
+    .accordion:hover .section__button {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-size: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 1980px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .header__title {
+    padding-bottom: 1.5rem;
+
+    font-size: 2.5rem;
+  }
+
+  .section-checkbox:checked + .section-label .section__decsription {
+    padding-bottom: 1.2rem;
+  }
+
+  .section__title {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .title-section {
+    font-size: 2rem;
+  }
+
+  .section__button {
+    width: 2rem;
+    height: 2rem;
+    background-size: 2rem;
+  }
+
+  @media (hover: hover) {
+    .accordion__section:hover .section__decsription {
+      padding-bottom: 1.2rem;
+    }
+
+    .section__button {
+      width: 0;
+      height: 0;
+      background-size: 0;
+    }
+
+    .accordion:hover .section__button {
+      width: 2rem;
+      height: 2rem;
+      background-size: 2rem;
+    }
   }
 } ;
